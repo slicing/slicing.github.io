@@ -1,0 +1,107 @@
+# 密码学
+三个阶段
+
+	古典密码
+	近代密码
+	现代密码
+##古典密码
+### 		 基本思想：
+		（1）代替和替换，文字符被其他字符所替换。
+		（2）置乱或置换，打乱明文字符的顺序。
+### 		基本类型：
+		   i.凯撒密码
+		   ii.棋盘密码
+		   iii.栅栏密码
+		   iiii.摩斯密码
+		   iiiii.矩阵密码
+#### 凯撒密码：
+
+		因被古罗马皇帝凯撒使用而闻名。
+	基本思想：通过把字母移动一定的位数来实现加密和解密。
+	![Alt text](./1511839827895.png)
+	
+		#####解密及加密代码：
+		mstr = 'abcdefghijklmnopqrstuvwxz'
+		lengthM = len(mstr)
+		
+		def crease(strs,shift):
+		    newstrs = ''
+		    for x in strs:
+		        newX = mstr.index(x)
+		        newX = (newX+shift)%lengthM
+		        newstrs = newstrs+mstr[newX]
+		    return newstrs
+		if __name__ == '__main__':
+		    strs = input("输入明文：")
+		    shift = input("移动位数:")
+		    shift = int(shift)
+		    C = crease(strs,shift)
+		    print("加密后：",C)
+		    print("解密",crease(C,int(shift)*(-1)))
+
+####棋盘密码：
+		将26位字母放在5*5的方格里，i，j放在一个格子里，想一个二维数组的样子。每个字母都有自己对应的两个数（行和列）ij。例如c为13.
+####栅栏密码：
+		基本思想：按列写入 ，按行读出
+			把加密的明文分成N个一组，再把每组的第一个字连接起来，形成一段无规律的话。
+	   
+	![Alt text](./v2-9ae057e796b3533627292fe2148809df_hd.jpg)
+	按行读出：mematrhpryetefeteat
+		#####解密及加密代码
+		def enercy(pt,key):
+		    array= [""]*key
+		    
+		    for x in range(0,len(pt)):
+		        row=x%key
+		        array[row]+=pt[x]
+		        print(array)
+		    cp = ""
+		    for x in array:
+		        cp+=x
+		    return cp
+	def decode(pt):
+	    array = ""
+	    t=(len(pt)+1)/2
+    
+	    t = int(t)
+	    print(t)
+	    if(len(pt)%2==0):
+	        for x in range(0,t):
+	            array+=pt[x]
+	            array+=pt[t+x]
+	            print(array)
+	    else:
+	        for x in range(0,t-1):
+	            array+=pt[x]
+	            array+=pt[t+x]
+	            print(array)
+	        array+=pt[t-1]
+        
+	    return array
+	if __name__ == "__main__":
+	    pt = input("plaintxt:")
+	    key = 2
+	    ciphertxt = enercy(pt,key)
+	    plaintxt = decode(ciphertxt)
+	    print(ciphertxt)
+	    print(plaintxt)
+####摩斯密码：
+	类似于信号的含义。 .表示短，-表示长。每个字母以及数字都有对应的摩斯电码。
+	A . _       M _ _       Y _ . _ _
+	B _ . . .   N _ .       Z _ _ . .
+	C _ . _ .   O _ _ _     1 . _ _ _ _
+	D _ . .     P . _ _ .   2 . . _ _ _
+	E .         Q _ _ . _   3 . . . _ _
+	F . . _ .   R . _ .     4 . . . . _
+	G _ _ .     S . . .     5 . . . . .
+	H . . . .   T _         6 _ . . . .
+	I . .       U . . _     7 _ _ . . .
+	J . _ _ _   V . . . _   8 _ _ _ . .
+	K _ . _     W . _ _     9 _ _ _ _ .
+	L . _ . .   X _ . . _   0 _ _ _ _ _
+####矩阵密码：
+		4方密码：一种对称式加密法  eeeeee
+		用四个5x5的矩阵来加密
+		。。。。
+	
+
