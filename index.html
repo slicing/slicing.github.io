@@ -152,6 +152,131 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-密码学" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><p>三个阶段</p>
+<pre><code>古典密码
+近代密码
+现代密码
+</code></pre><p>##古典密码</p>
+<h3 id="基本思想："><a href="#基本思想：" class="headerlink" title="基本思想："></a>基本思想：</h3><pre><code>（1）代替和替换，文字符被其他字符所替换。
+（2）置乱或置换，打乱明文字符的顺序。
+</code></pre><h3 id="基本类型："><a href="#基本类型：" class="headerlink" title="基本类型："></a>基本类型：</h3><pre><code>i.凯撒密码
+ii.棋盘密码
+iii.栅栏密码
+iiii.摩斯密码
+iiiii.矩阵密码
+</code></pre><h4 id="凯撒密码："><a href="#凯撒密码：" class="headerlink" title="凯撒密码："></a>凯撒密码：</h4><pre><code>    因被古罗马皇帝凯撒使用而闻名。
+基本思想：通过把字母移动一定的位数来实现加密和解密。
+![Alt text](./1511839827895.png)
+
+    #####解密及加密代码：
+    mstr = &apos;abcdefghijklmnopqrstuvwxz&apos;
+    lengthM = len(mstr)
+
+    def crease(strs,shift):
+        newstrs = &apos;&apos;
+        for x in strs:
+            newX = mstr.index(x)
+            newX = (newX+shift)%lengthM
+            newstrs = newstrs+mstr[newX]
+        return newstrs
+    if __name__ == &apos;__main__&apos;:
+        strs = input(&quot;输入明文：&quot;)
+        shift = input(&quot;移动位数:&quot;)
+        shift = int(shift)
+        C = crease(strs,shift)
+        print(&quot;加密后：&quot;,C)
+        print(&quot;解密&quot;,crease(C,int(shift)*(-1)))
+</code></pre><p>####棋盘密码：<br>        将26位字母放在5*5的方格里，i，j放在一个格子里，想一个二维数组的样子。每个字母都有自己对应的两个数（行和列）ij。例如c为13.</p>
+<p>####栅栏密码：<br>        基本思想：按列写入 ，按行读出<br>            把加密的明文分成N个一组，再把每组的第一个字连接起来，形成一段无规律的话。</p>
+<pre><code>![Alt text](./v2-9ae057e796b3533627292fe2148809df_hd.jpg)
+按行读出：mematrhpryetefeteat
+    #####解密及加密代码
+    def enercy(pt,key):
+        array= [&quot;&quot;]*key
+
+        for x in range(0,len(pt)):
+            row=x%key
+            array[row]+=pt[x]
+            print(array)
+        cp = &quot;&quot;
+        for x in array:
+            cp+=x
+        return cp
+def decode(pt):
+    array = &quot;&quot;
+    t=(len(pt)+1)/2
+
+    t = int(t)
+    print(t)
+    if(len(pt)%2==0):
+        for x in range(0,t):
+            array+=pt[x]
+            array+=pt[t+x]
+            print(array)
+    else:
+        for x in range(0,t-1):
+            array+=pt[x]
+            array+=pt[t+x]
+            print(array)
+        array+=pt[t-1]
+
+    return array
+if __name__ == &quot;__main__&quot;:
+    pt = input(&quot;plaintxt:&quot;)
+    key = 2
+    ciphertxt = enercy(pt,key)
+    plaintxt = decode(ciphertxt)
+    print(ciphertxt)
+    print(plaintxt)
+</code></pre><p>####摩斯密码：<br>    类似于信号的含义。 .表示短，-表示长。每个字母以及数字都有对应的摩斯电码。<br>    A . _       M _ _       Y _ . _ _<br>    B _ . . .   N _ .       Z _ _ . .<br>    C _ . _ .   O _ _ _     1 . _ _ _ _<br>    D _ . .     P . _ _ .   2 . . _ _ _<br>    E .         Q _ _ . _   3 . . . _ _<br>    F . . _ .   R . _ .     4 . . . . _<br>    G _ _ .     S . . .     5 . . . . .<br>    H . . . .   T _         6 _ . . . .<br>    I . .       U . . _     7 _ _ . . .<br>    J . _ _ _   V . . . _   8 _ _ _ . .<br>    K _ . _     W . _ _     9 _ _ _ _ .<br>    L . _ . .   X _ . . _   0 _ _ _ _ _</p>
+<p>####矩阵密码：<br>        4方密码：一种对称式加密法  eeeeee<br>        用四个5x5的矩阵来加密<br>        。。。。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/15/密码学/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
