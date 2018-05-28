@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      java学习笔记（一） | Slicing 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Slicing">
+    
+    
+
+    <meta name="description" content="刚刚开始自己学习java的道路，很多细小的知识点需要积累，在根据视频学习的时候，总结了一些可能平常自己不会注意到的东西，但却非常重要，无论是对写代码还是打基础都至关重要。有什么不对的地方还请多多指教。 （1）主方法的作用是为了让函数运行起来，public static void main(String [] args)中，public：代表权限最大；void ：不需要返回值；static：静态，不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（一） | Slicing">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/java学习笔记（一）/index.html">
+<meta property="og:site_name" content="Slicing">
+<meta property="og:description" content="刚刚开始自己学习java的道路，很多细小的知识点需要积累，在根据视频学习的时候，总结了一些可能平常自己不会注意到的东西，但却非常重要，无论是对写代码还是打基础都至关重要。有什么不对的地方还请多多指教。 （1）主方法的作用是为了让函数运行起来，public static void main(String [] args)中，public：代表权限最大；void ：不需要返回值；static：静态，不">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-28T07:44:09.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习笔记（一） | Slicing">
+<meta name="twitter:description" content="刚刚开始自己学习java的道路，很多细小的知识点需要积累，在根据视频学习的时候，总结了一些可能平常自己不会注意到的东西，但却非常重要，无论是对写代码还是打基础都至关重要。有什么不对的地方还请多多指教。 （1）主方法的作用是为了让函数运行起来，public static void main(String [] args)中，public：代表权限最大；void ：不需要返回值；static：静态，不">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Slicing</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">java学习笔记（一）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-28" class="post-meta__date date">2018-05-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>刚刚开始自己学习java的道路，很多细小的知识点需要积累，在根据视频学习的时候，总结了一些可能平常自己不会注意到的东西，但却非常重要，无论是对写代码还是打基础都至关重要。有什么不对的地方还请多多指教。</p>
+<p>（1）主方法的作用是为了让函数运行起来，public static void main(String [] args)中，public：代表权限最大；void ：不需要返回值；static：静态，不需要对象，直接用给定的雷鸣就可以访问函数名；(String [] args)：主函数的参数列表，字符串属性类型的参数；args（1/2），arguments参数，该名称就是一个变量名。</p>
+<p>（2）println：打印，在打印后面有一个回车（会产生换行），所以有时候需要使用print进行打印。</p>
+<p>（3）一行注释：//；多行注释：/<em>   </em>/（多行注释里不能嵌入多行注释）；文档注释：/*<em>  </em>/</p>
+<p>（4）字符用‘ ’表示：‘1’，‘你’（这个也是正确的）；字符串用“ ”表示；</p>
+<p>（5）数据类型，不仅仅有基本类型的八种（数值（int，short，long,byte,float,double）;字符（String）;布尔（boolean））;还有三种引用了类型：接口，对象，数组；在过大的数表示时要加上l。</p>
+<p>（6）byte b=3;</p>
+<pre><code>b = b+1;    这个代码运行时错误的，等号右边的b是byte类型的，但所加的那个1是Int类型，不同类型不能相加。但如果等号右边是个常量就可以进行自动装换。
+</code></pre><p>（7）&amp; 两边都参与运算；&amp;&amp;若左边是false，右边不参与运算。</p>
+<p>（8）a &lt;&lt; b:表示 a*(2^b）优点：运算速度快，缺点：只能针对2的倍数。</p>
+<pre><code>a &gt;&gt; b  ：a/(2^b)  这样会在右移的时候产生高位空缺，因此原高位是什么，空的就补什么。（&gt;&gt;&gt;）是无符号右移。
+</code></pre><p>（9）  x = (2 % 5)  2是被模数，5是模数   （a % b）</p>
+<pre><code>    a &lt; b:     x = a;
+
+    a = b:     x = 0;
+
+若a&lt;0;则x &lt; 0;  
+
+模2可以进行开关切换；
+
+ 任何；数模于模数必然小于模数。
+</code></pre><p>（10）&amp;：用来获取二进制某位的值。</p>
+<pre><code>^:一个数^这个数两次还是这个数。  6 ^ 3 ^ 3 = 6;
+</code></pre><p>（11）switch(x)中语句无顺序。其中x可以是如下类型：byte,int short,char,enum,String;</p>
+<p>（12）赋值运算符可以进行类型转换（自动转换）</p>
+<pre><code>short s = 4;
+
+s = s + 5;(精度丢失）
+
+s += 5;（没有丢失，自动装换）
+</code></pre><p>（13）比较运算符：只有（true,false）两种结果</p>
+<p>（14）逻辑运算符：用来连接boolean型表达式。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
