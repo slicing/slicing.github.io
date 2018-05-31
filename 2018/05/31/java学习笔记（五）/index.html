@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      java学习笔记（五） | Slicing 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Slicing">
+    
+    
+
+    <meta name="description" content="昨天由于时间关系，没写完，今日续…………………… 构造函数与一般函数的区别： 1.写法不同，参考上一篇  2.运行上有区别：构造函数：对象一创建就会调用对应的构造函数。                             一般方法是对象创建以后，才会调用所需的一般函数。   3.有了构造函数初始化信息，还需要Setxxx方法，因为创建后，如果需要对数据进行修改，可以通过Setxxx完成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（五） | Slicing">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/java学习笔记（五）/index.html">
+<meta property="og:site_name" content="Slicing">
+<meta property="og:description" content="昨天由于时间关系，没写完，今日续…………………… 构造函数与一般函数的区别： 1.写法不同，参考上一篇  2.运行上有区别：构造函数：对象一创建就会调用对应的构造函数。                             一般方法是对象创建以后，才会调用所需的一般函数。   3.有了构造函数初始化信息，还需要Setxxx方法，因为创建后，如果需要对数据进行修改，可以通过Setxxx完成。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-31T15:10:32.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习笔记（五） | Slicing">
+<meta name="twitter:description" content="昨天由于时间关系，没写完，今日续…………………… 构造函数与一般函数的区别： 1.写法不同，参考上一篇  2.运行上有区别：构造函数：对象一创建就会调用对应的构造函数。                             一般方法是对象创建以后，才会调用所需的一般函数。   3.有了构造函数初始化信息，还需要Setxxx方法，因为创建后，如果需要对数据进行修改，可以通过Setxxx完成。">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Slicing</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">java学习笔记（五）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-31" class="post-meta__date date">2018-05-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>昨天由于时间关系，没写完，今日续……………………</p>
+<p>构造函数与一般函数的区别：</p>
+<pre><code>1.写法不同，参考上一篇
+
+2.运行上有区别：构造函数：对象一创建就会调用对应的构造函数。
+
+                           一般方法是对象创建以后，才会调用所需的一般函数。
+
+ 3.有了构造函数初始化信息，还需要Setxxx方法，因为创建后，如果需要对数据进行修改，可以通过Setxxx完成。
+
+ 4.构造函数的对象创建后，仅调用一次，一般方法可以被对象调用多次。
+</code></pre><p>接下来就要出现this了，这又是什么…………………………</p>
+<p>传说：构造函数是对象初始化时调用的，但是对象拉莫多，我们是给哪个对象进行初始化呢？</p>
+<pre><code>因此，就是通过this这个关键字俩记录住对象的地址。
+</code></pre><p>在构造函数中调用其他构造函数的格式：this（实参列表），就会调用对应的构造函数。</p>
+<p>南无：this又代表什么？…………emmm代表代表(（我思考下啦）</p>
+<pre><code>this就代表对象，
+</code></pre><p>南无：代表哪个对象？    </p>
+<pre><code>哪个对象调用了this所在的函数，就代表那个对象。
+</code></pre><p>***this关键字的另一个作用：</p>
+<pre><code>可以用this标识哪个变量是成员变量，这个标识可以省略不写，但。。。当局部变量和成员变量同名时，必须用this来标识成员变量。
+</code></pre><p>————————————————————————————————</p>
+<p>下一篇：</p>
+<p>（1）堆内存中创建对象除了产生实例，还有封装数据。</p>
+<p>（2）被静态static修饰的方法除了可以被对象调用外，还可以被类名调用。</p>
+<p>（3）将方法定义为静态：</p>
+<pre><code>定义功能时，如果功能不需要访问类中定义的成员变量时，该功能就需要静态修饰。
+</code></pre><p>（4）静态方法</p>
+<pre><code>1.静态方法不能访问非静态的成员，但反过来可以的哦。
+
+            说明静态的弊端在于访问出现局限性，好处可以直接被类调用。
+
+   2.静态方法中不允许出现this、super关键字。
+</code></pre><p>原因：1，静态是随着类的加载而加载，消失而消失。</p>
+<pre><code>2.静态优先于对象存在，被对象共享。
+
+ 3.因为静态先存在于内存中无法访问后来的对象中的数据，所以静态无法访问非静态的，而且内存无法写this，因为这时对象优肯不存在，this没有任何指向。
+</code></pre>
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
