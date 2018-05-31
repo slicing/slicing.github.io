@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      java学习笔记（三） | Slicing 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Slicing">
+    
+    
+
+    <meta name="description" content="（1）面向对象与面向过程 面向对象：将所有功能封装，面对的是封装了功能的实体对象。  面向过程：就是不断地使用函数。  面向对象基于面向过程，将过程进行对象的封装，找到对象便可用对象中的功能。 （2）类的真正意义是描述事物。 属性和行为统称为事物中的成员。成员分为两种：成员属性（变量）和成员行为（函数）。 （3）局部变量和成员变量的区别： 区别一：定义的位置不同：成员变量定义在类中；局部变量定义在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（三） | Slicing">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/java学习笔记（三）/index.html">
+<meta property="og:site_name" content="Slicing">
+<meta property="og:description" content="（1）面向对象与面向过程 面向对象：将所有功能封装，面对的是封装了功能的实体对象。  面向过程：就是不断地使用函数。  面向对象基于面向过程，将过程进行对象的封装，找到对象便可用对象中的功能。 （2）类的真正意义是描述事物。 属性和行为统称为事物中的成员。成员分为两种：成员属性（变量）和成员行为（函数）。 （3）局部变量和成员变量的区别： 区别一：定义的位置不同：成员变量定义在类中；局部变量定义在">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-31T15:04:34.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习笔记（三） | Slicing">
+<meta name="twitter:description" content="（1）面向对象与面向过程 面向对象：将所有功能封装，面对的是封装了功能的实体对象。  面向过程：就是不断地使用函数。  面向对象基于面向过程，将过程进行对象的封装，找到对象便可用对象中的功能。 （2）类的真正意义是描述事物。 属性和行为统称为事物中的成员。成员分为两种：成员属性（变量）和成员行为（函数）。 （3）局部变量和成员变量的区别： 区别一：定义的位置不同：成员变量定义在类中；局部变量定义在">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Slicing</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">java学习笔记（三）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-31" class="post-meta__date date">2018-05-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>（1）面向对象与面向过程</p>
+<pre><code>面向对象：将所有功能封装，面对的是封装了功能的实体对象。
+
+面向过程：就是不断地使用函数。
+
+面向对象基于面向过程，将过程进行对象的封装，找到对象便可用对象中的功能。
+</code></pre><p>（2）类的真正意义是描述事物。</p>
+<pre><code>属性和行为统称为事物中的成员。成员分为两种：成员属性（变量）和成员行为（函数）。
+</code></pre><p>（3）局部变量和成员变量的区别：</p>
+<pre><code>区别一：定义的位置不同：成员变量定义在类中；局部变量定义在方法以及语句中，
+
+区别二：在内存中的位置不同：成员变量存储在堆内存的对象中；局部变量存储在栈内存的方法中。
+
+区别三：生命周期不同：成员变量随对象出现和消失；局部变量随方法出现和消失。
+
+区别四：初始化方式不同：成员变量因为在堆内存中，有默认初始化值；局部变量没有默认初始化，必须初始化后才能使用。
+</code></pre><p>（4）类与对象的关系：</p>
+<pre><code>类：对事物的描述，需要体现属性和行为；
+
+对象：该类事物创建的实例，通过该对象调用具有的属性和行为
+</code></pre><p>（5）匿名对象：</p>
+<pre><code>Car c = new Car( );      
+
+                                              ---&gt;      new Car( ).run( )      （匿名对象）              
+
+c.run( );                  
+
+注意：这是对象调用的简化形式，但是，凡是简化的同城都有局限性。
+</code></pre><p>（6）封装：</p>
+<pre><code>表现 ： ····函数就是一个最基本封装体。 ····类其实也是一个封装体。
+
+好处：····提高代码的复用性。    ····隐藏实现细节，还要对外提高可以访问的方式。  ·····提高安全性
+</code></pre><p>（7）对变量的访问操作有两个动作：赋值（set），取值（get）</p>
+<p>（8）对私有变量的访问方式：set变量，get变量</p>
+<p>（9）倘若以后开发，描述事物属性都私有化，并提供setxxx,getxxx方法，并对其访问。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
